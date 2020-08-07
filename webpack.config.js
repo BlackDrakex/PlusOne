@@ -2,7 +2,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const pluginOptions = {
   filename: 'index.html',
-  template: './src/index.html',
+  template: './src/index.pug',
 };
 
 module.exports = {
