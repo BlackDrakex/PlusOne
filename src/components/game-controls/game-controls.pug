@@ -1,0 +1,8 @@
+include ../button/button
+
+mixin game-controls(options={})
+  .game-controls
+    .game-controls__main-button
+      +button({text: options.mainButtonText})
+    .game-controls__settings-button
+      +button({type: "settings"})

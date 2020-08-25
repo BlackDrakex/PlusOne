@@ -1,5 +1,6 @@
 include ./components/logo/logo
 include ./components/welcome-title/welcome-title
+include ./components/game-controls/game-controls
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -13,3 +14,5 @@ html(lang="ru")
         +logo({size: "big"})
       .game__title
         +welcome-title({title: "Добро пожаловать!", text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis officiis beatae soluta repudiandae alias, maiores natus similique ducimus recusandae adipisci expedita ipsa numquam optio commodi reprehenderit est sint id voluptates!"})
+      .game__controls
+        +game-controls({mainButtonText: "Начать"})
