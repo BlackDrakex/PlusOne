@@ -9,10 +9,16 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title PlusOne
   body.game
-    .game__welcome
+    .game__welcome.game__welcome_active
       .game__logo
         +logo({size: "big"})
       .game__title
         +welcome-title({title: "Добро пожаловать!", text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis officiis beatae soluta repudiandae alias, maiores natus similique ducimus recusandae adipisci expedita ipsa numquam optio commodi reprehenderit est sint id voluptates!"})
       .game__controls
         +game-controls({mainButtonText: "Начать"})
+    .game__playing-field
+      .game__logo
+        +logo()
+      .game__screen
+      .game-controls
+        +game-controls({mainButtonText: "Остановить"})
