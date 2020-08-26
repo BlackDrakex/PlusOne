@@ -26,4 +26,8 @@ class GameControls {
   onSettingsButtonPress(callback: () => void): void {
     this._settingsButton.onPress(callback);
   }
+
+  setMainButtonText(text: string): void {
+    this._mainButton.setButtonText(text);
+  }
 }

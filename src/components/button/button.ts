@@ -10,4 +10,8 @@ export class Button {
   onPress(callback: () => void): void {
     this._node.addEventListener('click', callback);
   }
+
+  setButtonText(text: string): void {
+    this._node.textContent = text;
+  }
 }
