@@ -70,4 +70,19 @@ describe('Digit', () => {
       digit.showCorrectDigit();
     }
   });
+
+  describe('destroy', () => {
+    it('Removes corresponding element from DOM', () => {
+      digit.render();
+      digit.destroy();
+
+      expect(document.querySelectorAll('input').length).to.equal(0);
+    });
+
+    it("Throws and exception if element is already removed or isn't rendered yet", () => {
+      const func = digit.destroy.bind(digit);
+
+      expect(func).to.throw("Digit wasn't rendered yet or already have been destroyed.");
+    });
+  });
 });

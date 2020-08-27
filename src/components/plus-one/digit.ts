@@ -36,4 +36,11 @@ export class Digit {
   _throwError(message: string): never {
     throw new Error(message);
   }
+
+  destroy() {
+    if (this._node === null) this._throwError("Digit wasn't rendered yet or already have been destroyed.");
+
+    this._node.remove();
+    this._node = null;
+  }
 }
