@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.dev.js --open",
     "build": "webpack --config ./config/webpack.prod.js",
-    "test": "mocha --recursive './src/**/*.test.js'"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,10 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
+    "@types/chai": "^4.2.12",
+    "@types/expect": "^24.3.0",
+    "@types/jsdom": "^16.2.3",
+    "@types/mocha": "^8.0.3",
     "@types/webpack": "^4.41.21",
     "@types/webpack-env": "^1.15.2",
     "babel-loader": "^8.1.0",
@@ -35,6 +39,7 @@
     "sinon": "^9.0.2",
     "style-loader": "^1.2.1",
     "ts-loader": "^8.0.2",
+    "ts-node": "^9.0.0",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
