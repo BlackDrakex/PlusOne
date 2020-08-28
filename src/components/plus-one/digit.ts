@@ -39,6 +39,12 @@ export class Digit {
     this._node.classList.add('plus-one__digit_readonly');
   }
 
+  showAnswerField() {
+    this._node.value = String(this._answer || '');
+    this._node.readOnly = false;
+    this._node.classList.remove('plus-one__digit_readonly');
+  }
+
   _throwError(message: string): never {
     throw new Error(message);
   }

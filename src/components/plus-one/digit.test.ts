@@ -71,6 +71,17 @@ describe('Digit', () => {
     }
   });
 
+  describe('showAnswerField', () => {
+    it('Shows empty editable field', () => {
+      digit.render();
+      digit.showAnswerField();
+
+      const node = document.querySelector('input');
+      expect(node.value).to.equal('');
+      expect(node.readOnly).to.equal(false);
+    });
+  });
+
   describe('destroy', () => {
     it('Removes corresponding element from DOM', () => {
       digit.render();
