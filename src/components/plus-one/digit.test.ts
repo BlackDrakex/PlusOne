@@ -130,4 +130,32 @@ describe('Digit', () => {
       node.dispatchEvent(changeEvent);
     }
   });
+
+  describe('showResult', () => {
+    it('Shows correct digit in node', () => {
+      digit.render();
+      digit.setCorrectDigit(2);
+      digit.setAnswer(5);
+
+      digit.showResult();
+      const node = document.querySelector('input');
+      expect(node.value).to.equal('2');
+    });
+
+    it('If answer is incorrect, field has corresponding class', () => {
+      digit.render();
+      digit.setCorrectDigit(5);
+      digit.setAnswer(2);
+
+      digit.showResult();
+      const node = document.querySelector('input');
+      expect(node.classList.contains('plus-one__digit_incorrect')).to.equal(true);
+    });
+
+    it('Throws and exception if called before render', () => {
+      const func = digit.showResult.bind(digit);
+
+      expect(func).to.throw("Element isn't rendered!");
+    });
+  });
 });

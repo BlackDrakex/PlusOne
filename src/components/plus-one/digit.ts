@@ -63,4 +63,10 @@ export class Digit {
   setAnswer(answer: number) {
     this._answer = answer;
   }
+
+  showResult() {
+    if (!this._node) return this._throwError("Element isn't rendered!");
+    this._node.value = String(this._correctDigit);
+    if (this._answer !== this._correctDigit) this._node.classList.add('plus-one__digit_incorrect');
+  }
 }
