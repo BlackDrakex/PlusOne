@@ -2,11 +2,13 @@ export class Digit {
   private _parentNode: HTMLElement;
   private _node: HTMLInputElement;
   private _correctDigit: number;
+  private _answer: number;
 
   constructor(parentNode: HTMLElement) {
     this._parentNode = parentNode;
     this._node = null;
     this._correctDigit = 0;
+    this._answer = null;
   }
 
   render() {
@@ -17,6 +19,10 @@ export class Digit {
 
     this._node = document.createElement('input');
     this._node.classList.add(...classes);
+
+    this._node.addEventListener('input', () => {
+      this.setAnswer(+this._node.value);
+    });
 
     this._parentNode.appendChild(this._node);
   }
@@ -42,5 +48,13 @@ export class Digit {
 
     this._node.remove();
     this._node = null;
+  }
+
+  isAnswerGiven() {
+    return !!this._answer;
+  }
+
+  setAnswer(answer: number) {
+    this._answer = answer;
   }
 }

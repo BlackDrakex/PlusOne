@@ -85,4 +85,38 @@ describe('Digit', () => {
       expect(func).to.throw("Digit wasn't rendered yet or already have been destroyed.");
     });
   });
+
+  describe('isAnswerGiven', () => {
+    it('Returns true if field is not empty', () => {
+      digit.render();
+      setValue('10');
+
+      expect(digit.isAnswerGiven()).to.equal(true);
+    });
+
+    it('Returns false if field is empty', () => {
+      digit.render();
+
+      expect(digit.isAnswerGiven()).to.equal(false);
+    });
+
+    it('Returns false if field was cleared', () => {
+      digit.render();
+      setValue('5');
+      setValue('');
+
+      expect(digit.isAnswerGiven()).to.equal(false);
+    });
+
+    function setValue(value: string): void {
+      const DomEvent = dom.window.Event;
+      const inputEvent = new DomEvent('input', { bubbles: true, cancelable: true });
+      const changeEvent = new DomEvent('change', { bubbles: true, cancelable: true });
+
+      const node = document.querySelector('input');
+      node.value = value;
+      node.dispatchEvent(inputEvent);
+      node.dispatchEvent(changeEvent);
+    }
+  });
 });
